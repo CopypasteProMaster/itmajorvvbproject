@@ -1,0 +1,38 @@
+'DBO_PRODUCT   PRO_ID,PRO_NAME,PRO_GRP,UNITS_STK,STATUS
+
+pag palit nay receipt
+id
+product no foreignkey
+COSTUMER ID PRIMARY KEY
+----
+fullname
+address
+contact
+product gi palit
+gibayad sa
+PETSA NAGBAYAD
+QUANTITY PILA ANG GI PALIT
+
+
+sa reciept kong magtapal
+product no foreignkey
+COSTUMER ID FOREIGNKEY
+---
+fullname
+address
+contact
+product gi palit
+full bayaran
+balance
+PETSA
+
+ALTER TABLE bdo_pro_order
+ADD CONSTRAINT fk_bdo_pro_order_pro_id
+FOREIGN KEY (COSTUMER_ID) 
+REFERENCES rec(COSTUMER_ID);
+
+
+ALTER TABLE bdo_pro_order
+ADD CONSTRAINT fk_bdo_pro_order_pro_id
+FOREIGN KEY (PRO_ID) 
+REFERENCES dbo_product(PRO_ID);
